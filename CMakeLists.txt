@@ -9,10 +9,12 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(std_msgs REQUIRED)
+# find_package(builtin_interfaces REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Pid.msg"
   "msg/Can.msg"
+  DEPENDENCIES builtin_interfaces std_msgs
 )
 # uncomment the following section in order to fill in
 # further dependencies manually.
